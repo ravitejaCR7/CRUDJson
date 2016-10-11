@@ -21,38 +21,45 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CREATE"
+        android:text="CheckPermission"
         android:id="@+id/button"
+        android:layout_marginTop="38dp"
+        android:onClick="onClick"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:onClick="creationClick" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RETRIEVE"
-        android:id="@+id/button2"
+        android:text="c"
+        android:id="@+id/creationId"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="retrievingClick" />
+        android:layout_alignParentStart="true"
+        android:onClick="onCreateCall" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UPDATE"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:onClick="updateClick" />
+        android:text="r"
+        android:id="@+id/RetrievingId"
+        android:layout_alignBottom="@+id/creationId"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DELETE"
-        android:id="@+id/button4"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="deletionClick" />
+        android:text="u"
+        android:id="@+id/updationId"
+        android:layout_below="@+id/creationId"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="69dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="d"
+        android:id="@+id/deletionId"
+        android:layout_alignBottom="@+id/updationId"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
