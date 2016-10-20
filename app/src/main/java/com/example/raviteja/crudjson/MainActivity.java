@@ -59,8 +59,19 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onCreateCall(View v)
     {
-        Intent i = new Intent(this,JsonCreation.class);
-        startActivity(i);
+        Intent c = new Intent(this,JsonCreation.class);
+        startActivity(c);
+    }
+    public void onUpdatecall(View v)
+    {
+        Intent u = new Intent(this,JsonUpdation.class);
+        startActivity(u);
+    }
+    public void onDeleteCall(View v)
+    {
+        Intent d = new Intent(this,JsonDeletion.class);
+        startActivity(d);
+
     }
 }
 

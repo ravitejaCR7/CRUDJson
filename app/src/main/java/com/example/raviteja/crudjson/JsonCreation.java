@@ -60,8 +60,4 @@ public class JsonCreation extends AppCompatActivity {
             }
         }
     }
-    public void onTesting(View v)
-    {
-
-    }
 }

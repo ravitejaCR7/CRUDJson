@@ -7,34 +7,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.raviteja.crudjson.JsonCreation">
+    tools:context="com.example.raviteja.crudjson.JsonUpdation">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText_name"
+        android:id="@+id/editText_key"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="119dp"
-        android:hint="enter username" />
+        android:layout_marginTop="60dp"
+        android:hint="enter key" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText_hostel"
-        android:layout_below="@+id/editText_name"
+        android:id="@+id/editText_value"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
-        android:hint="enter hostelname" />
+        android:hint="enter value" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="submit"
-        android:id="@+id/button_creation"
-        android:layout_below="@+id/editText_hostel"
+        android:text="update"
+        android:id="@+id/button2"
+        android:layout_below="@+id/editText_value"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:onClick="onJSONClick" />
-
+        android:layout_marginTop="60dp"
+        android:onClick="updationCall" />
 </RelativeLayout>
