@@ -43,7 +43,8 @@
         android:text="r"
         android:id="@+id/RetrievingId"
         android:layout_alignBottom="@+id/creationId"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="onRetrieving" />
 
     <Button
         android:layout_width="wrap_content"

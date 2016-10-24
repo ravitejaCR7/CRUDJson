@@ -27,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
     Context context;
     FileCreation fcreate= new FileCreation();
     PermissionsClass pc;
+    CheckingNetwork checkingNetwork;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pc= new PermissionsClass(MainActivity.this);
+        checkingNetwork= new CheckingNetwork();
     }
     public void onClick(View v)
     {
@@ -39,14 +41,23 @@ public class MainActivity extends AppCompatActivity {
         {
             if (pc.checkPermission())
             {
-                Log.e("ans", "Permission Granted, Now you can use internet");
+                Log.e("ans", "Permission Granted, Now you can use storage");
                 // Code for above or equal 23 API Oriented Device
                 // Create a common Method for both
-                Toast.makeText(getApplicationContext(),"success",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"success s",Toast.LENGTH_SHORT).show();
 
             } else {
                pc.requestPermission();
-                Log.e("ans1", "Permission Granted, Now you can use internet.");
+                Log.e("ans1", "Permission Granted, Now you can use storage.");
+            }
+            if(pc.checkPermission1())
+            {
+                Log.e("ans internet", "Permission Granted, Now you can use internet");
+            }
+            else
+            {
+                pc.requestPermission1();
+                Log.e("ans1 internet", "Permission Granted, Now you can use internet.");
             }
         }
         else
@@ -72,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
         Intent d = new Intent(this,JsonDeletion.class);
         startActivity(d);
 
+    }
+    public void onRetrieving(View v)
+    {
+        checkingNetwork.connectivityCheck(getApplicationContext());
+        Intent r = new Intent(this,JsonRetrieving.class);
+        startActivity(r);
     }
 }
 
