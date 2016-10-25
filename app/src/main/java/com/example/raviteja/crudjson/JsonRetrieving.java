@@ -2,12 +2,21 @@ package com.example.raviteja.crudjson;
 
 import android.content.Intent;
 import android.os.Environment;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+import com.firebase.client.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +29,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class JsonRetrieving extends AppCompatActivity {
 
     List<String> textArray_name,textArray_hostel;
@@ -28,13 +39,21 @@ public class JsonRetrieving extends AppCompatActivity {
     File file= null;
     File root= null;
     TextView tv_name,tv_hostel;
+    //private Firebase mRef;
+    //Firebase mRefChild;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_json_retrieving);
+        Firebase.setAndroidContext(this);
+        //mRef= new Firebase("https://crudjson.firebaseio.com/");
         tv_name=(TextView)findViewById(R.id.textView_name);
         tv_hostel=(TextView)findViewById(R.id.textView_hostel);
         fileChecking();
+
     }
     public void fileChecking()
     {
@@ -106,8 +125,29 @@ public class JsonRetrieving extends AppCompatActivity {
     }
     public void onUploadClick(View v)
     {
+        //Firebase x[]= new Firebase[textArray_name.size()];
+        for (int i=0;i<textArray_name.size();i++)
+        {
+            //mRefChild = mRef.child(textArray_name.get(i));
+            //mRefChild.setValue(textArray_hostel.get(i));
+            myRef = database.getReference(textArray_name.get(i));
+            myRef.setValue(textArray_hostel.get(i));
+        }
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d("wowwwwwwww", "Value is: " + value);
+            }
 
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("thussssssss", "Failed to read value.", error.toException());
+            }
+        });
     }
-
 
 }

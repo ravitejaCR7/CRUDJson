@@ -99,48 +99,4 @@ public class FileCreation {
             e.printStackTrace();
         }
     }
-    public void checkUnique(JSONObject json)
-    {
-        textArray = new ArrayList<String>();
-        try {
-            JSONArray json_array= json.getJSONArray("id");
-            for(int i=0;i<json_array.length();i++)
-            {
-                String checkValue = json_array.getJSONObject(i).getString("name");
-                textArray.add(checkValue);
-            }
-            Log.e("arraylist",textArray.toString());
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
-    public void deletionJSON(JSONObject json,List<String> list,String name)
-    {
-        int x=0;
-        try {
-            JSONArray arr=json.getJSONArray("id");
-            for (int i=0; i<list.size(); i++)
-            {
-                if (list.get(i).equals(name))
-                {
-                    x++;
-                    if (x==2)
-                    {
-                        arr.remove(i);
-                        Log.e("removed finally","at index "+i);
-                        x=0;
-                    }
-                    else
-                    {
-                        x--;
-                    }
-                }
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
