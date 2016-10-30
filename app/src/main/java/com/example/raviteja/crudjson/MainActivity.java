@@ -91,5 +91,10 @@ public class MainActivity extends AppCompatActivity {
         Intent r = new Intent(this,JsonRetrieving.class);
         startActivity(r);
     }
+    public void onListCall(View v)
+    {
+        Intent l = new Intent(this,ListActivity.class);
+        startActivity(l);
+    }
 }
 

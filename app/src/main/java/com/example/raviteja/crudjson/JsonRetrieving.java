@@ -42,7 +42,7 @@ public class JsonRetrieving extends AppCompatActivity {
     //private Firebase mRef;
     //Firebase mRefChild;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef;
+    DatabaseReference myRef,mainRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class JsonRetrieving extends AppCompatActivity {
         //mRef= new Firebase("https://crudjson.firebaseio.com/");
         tv_name=(TextView)findViewById(R.id.textView_name);
         tv_hostel=(TextView)findViewById(R.id.textView_hostel);
+        mainRef = database.getReference("root");
         fileChecking();
 
     }
@@ -130,7 +131,7 @@ public class JsonRetrieving extends AppCompatActivity {
         {
             //mRefChild = mRef.child(textArray_name.get(i));
             //mRefChild.setValue(textArray_hostel.get(i));
-            myRef = database.getReference(textArray_name.get(i));
+            myRef = mainRef.child(textArray_name.get(i));
             myRef.setValue(textArray_hostel.get(i));
         }
         myRef.addValueEventListener(new ValueEventListener() {

@@ -23,7 +23,8 @@
         <activity android:name=".JsonCreation" />
         <activity android:name=".JsonUpdation" />
         <activity android:name=".JsonDeletion" />
-        <activity android:name=".JsonRetrieving"></activity>
+        <activity android:name=".JsonRetrieving" />
+        <activity android:name=".ListActivity"></activity>
     </application>
 
 </manifest>

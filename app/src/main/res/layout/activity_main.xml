@@ -9,15 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.raviteja.crudjson.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SELECT ONE OPERATION"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,15 +18,6 @@
         android:onClick="onClick"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="c"
-        android:id="@+id/creationId"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onCreateCall" />
 
     <Button
         android:layout_width="wrap_content"
@@ -64,5 +46,34 @@
         android:layout_alignBottom="@+id/updationId"
         android:layout_alignParentEnd="true"
         android:onClick="onDeleteCall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECT ONE OPERATION"
+        android:id="@+id/textView"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c"
+        android:id="@+id/creationId"
+        android:onClick="onCreateCall"
+        android:layout_below="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="55dp" />
+
+    <Button
+        android:text="main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
+        android:onClick="onListCall" />
 
 </RelativeLayout>
