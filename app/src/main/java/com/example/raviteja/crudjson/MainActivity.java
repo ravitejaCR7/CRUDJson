@@ -87,9 +87,17 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onRetrieving(View v)
     {
-        checkingNetwork.connectivityCheck(getApplicationContext());
-        Intent r = new Intent(this,JsonRetrieving.class);
-        startActivity(r);
+        int networkAccess=checkingNetwork.connectivityCheck(getApplicationContext());
+        if (networkAccess==1)
+        {
+            Intent r = new Intent(this,JsonRetrieving.class);
+            startActivity(r);
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"no net connection",Toast.LENGTH_SHORT).show();
+        }
+
     }
     public void onListCall(View v)
     {

@@ -23,6 +23,7 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
 
+    Toolbar toolbar;
     List<String> textArray_name,textArray_hostel;
     String previousJson = null;
     JSONObject jsonObject;
@@ -50,6 +51,8 @@ public class ListActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+        toolbar= (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
     public void fileChecking()

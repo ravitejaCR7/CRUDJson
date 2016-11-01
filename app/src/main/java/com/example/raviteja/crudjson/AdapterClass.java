@@ -39,12 +39,11 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.RecyclerView
 
     }
 
-
-
     @Override
     public int getItemCount() {
         return arrayList.size();
     }
+
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView tx_name,tx_hostel;

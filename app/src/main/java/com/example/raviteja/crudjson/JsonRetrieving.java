@@ -52,7 +52,8 @@ public class JsonRetrieving extends AppCompatActivity {
         //mRef= new Firebase("https://crudjson.firebaseio.com/");
         tv_name=(TextView)findViewById(R.id.textView_name);
         tv_hostel=(TextView)findViewById(R.id.textView_hostel);
-        mainRef = database.getReference("root");
+        mainRef = database.getReference("Root");
+        mainRef.removeValue();
         fileChecking();
 
     }
