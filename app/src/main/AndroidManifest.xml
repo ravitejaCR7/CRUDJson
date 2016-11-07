@@ -24,7 +24,8 @@
         <activity android:name=".JsonUpdation" />
         <activity android:name=".JsonDeletion" />
         <activity android:name=".JsonRetrieving" />
-        <activity android:name=".ListActivity"></activity>
+        <activity android:name=".ListActivity"
+            android:theme="@style/AppTheme1"></activity>
     </application>
 
 </manifest>
